@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --blue: #309cd8;
+  --black: #525151
+}
+
+body {
+  background: var(--blue)
+}
+
+h1, h2, h3, label, input, button {
+  font-family: Amatic SC;
+}
+
+.mainForm {
+  width: 50vh;
+  background-color: white;
+  padding: 3vh;
+  margin: 5% auto;
+}
+
+.mainForm form, .mainForm .multiplePageForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainForm label {
+  font-size: 30px;
+}
+
+.mainForm input, button {
+  margin-bottom: 1.5rem;
+  font-size: 30px;
+  border: 0;
+  border: 4px solid var(--black);
+  color: var(--black)
+}
+
+input[type="text"], input[type="password"]{
+  padding-left: 1rem;
+}
+
+.mainForm input:last-of-type{
+  margin-top: 1rem;
+  margin-bottom: 0;
+  border: 4px solid var(--blue)
+}
+
+form h2{
+  text-align: center;
+  font-size: 3rem;
+}
+
+.divider {
+  width: 100%;
+  height: 0;
+  border: 1px solid #ddd;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.blue {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.divider p{
+  position: absolute;
+  top: -0.5rem;
+  color: var(--black);
+  background: white;
+  padding: 0 1rem;
+}
+
+button {
+  width: 100%;
+  border-color: var(--blue);
+  color: white;
+  background-color: var(--blue)
+}
+
+.cloud {
+  position: absolute;
+  width: 90vh;
+  height: 90vh;
+  top: 50%;
+  left: 50%;
+  margin: -43vh -45vh;
+}
+
+.cloud h1 {
+  color: white;
+  transform: rotate(-18deg);
+  position: absolute;
+  font-size: 15vh;
+  left: -2vh;
+  top: -6vh;
+}
+
+.cloud div {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  width: 50%;
+  height: 30%;
+}
+
+.cloud div:first-of-type{
+  top: 10%;
+  transform: rotate(15deg);
+}
+
+.cloud div:nth-of-type(2){
+  transform: rotate(15deg);
+  left: 25%;
+  height: 60%;
+  width: 60%;
+  top: 0;
+}
+
+.cloud div:nth-of-type(3){
+  transform: rotate(0);
+  top: 16%;
+  right: 0;
+  height: 50%;
+}
+
+.cloud div:nth-of-type(4){
+  transform: rotate(-25deg);
+  top: 25%;
+  width: 80%;
+  height: 50%;
+}
+.cloud div:last-of-type{
+  transform: rotate(0deg);
+  top: 40%;
+  width: 60%;
+  right: 10%;
+  height: 50%;
+}
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+footer > section {
+  background: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 5vw;
+  align-items: center;
+}
+
+footer img {
+  height: 10vh;
+  width: 10vh;
+}

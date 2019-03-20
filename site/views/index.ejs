@@ -1,0 +1,35 @@
+<% include ./partials/header %>
+
+  <section class="mainForm">
+    <form action="/createUser" method="post">
+      <h2>Login</h2>
+      <label for="">E-mail</label>
+      <input name="email" type="text" placeholder="appel@sap.com">
+      <label for="">Password</label>
+      <input name="pass" type="password">
+      <input type="submit">
+    </form>
+
+    <div class="divider blue"><p>Or</p></div>
+
+    <a href="/createAccount">
+      <button>Create an Account!</button>
+    </a>
+</section>
+
+<footer>
+  <section>
+    <img src="img/euro.png" alt="">
+    <h3>100% Gratis</h3>
+  </section>
+  <section>
+    <img src="img/hart.png" alt="">
+    <h3>Gegarandeerd Liefde</h3>
+  </section>
+  <section>
+    <img src="img/shild.png" alt="">
+    <h3>Super veilig</h3>
+  </section>
+</footer>
+
+<% include ./partials/footer %>
