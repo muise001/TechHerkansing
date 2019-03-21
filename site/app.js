@@ -30,7 +30,11 @@ app.use(session({
 }))
 
 app.get("/", (req, res) => {
-  res.render("index")
+  if (req.session.loggedin) {
+    res.redirect("/home")
+  } else {
+    res.render("index")
+  }
 })
 
 app.get("/createAccount", (req, res) => {
@@ -43,8 +47,9 @@ app.post("/login", (req, res, next) => {
     if (err) return next(err)
     result = result[0]
     if (md5(salt + password + salt) === result.password) {
-      console.log("welcome back")
-      res.render("home")
+      req.session.loggedin = true
+      req.session.data = result
+      res.redirect("/home")
     } else {
       console.log("wrong password")
       res.render("index")
@@ -65,6 +70,22 @@ app.post("/createAccount", (req, res) => {
     console.log("passwords don't match")
     return
   }
+})
+
+app.get("/home", (req, res) => {
+  console.log(req.session)
+  if (req.session.loggedin) {
+    res.render("home")
+  } else {
+    res.redirect("/")
+  }
+})
+
+app.get("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if(err) console.log(err);
+  })
+  res.redirect("/")
 })
 
 let server = app.listen(PORT, () => {
