@@ -28,3 +28,6 @@ const session = require("express-session")      // Zodat bepaalde pagina's allee
 ```
 
 ## De Database
+Ik gebruik mijn eigen data-base die live staat. Hierdoor hoef ik geen Mamp of mySQLworkbench te gebruiken. In mijn eigen database gebruik ik PHP-myAdmin. Hieronder de structuur van wat ik tot nu toe in de database opsla
+
+<img src="https://github.com/muise001/TechHerkansing/blob/master/readme%20img/database.png" alt="db">
