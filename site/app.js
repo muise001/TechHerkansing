@@ -3,10 +3,8 @@ const express = require('express')
 const ejs = require('ejs')
 const bodyParser = require('body-parser')
 const app = express()
-const fetch = require("node-fetch")
 const mysql = require("promise-mysql")
 const ENV = require("dotenv").config().parsed
-const myConnection = require('express-myconnection');
 const salt = "0923ur902hfwnWEhfewo89282@@@u9ef"
 const md5 = require("md5")
 const session = require("express-session")
@@ -64,7 +62,7 @@ app.post("/createAccount", (req, res) => {
     pool.query("INSERT INTO users SET ?", {
       username, email, password: md5(salt+password+salt), name, last_name, birthDay, gender, bio, profilePicture, preference
     })
-    res.render("/home")
+    res.redirect("/home")
   } else {
     res.redirect("/?error=true")
     console.log("passwords don't match")
