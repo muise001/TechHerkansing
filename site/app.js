@@ -30,7 +30,7 @@ app.use(session({
 }))
 
 app.get("/", (req, res) => {
-  if (req.session.loggedin) {
+  if (req.session.ID) {
     res.redirect("/home")
   } else {
     res.render("index")
@@ -47,8 +47,8 @@ app.post("/login", (req, res, next) => {
     if (err) return next(err)
     result = result[0]
     if (md5(salt + password + salt) === result.password) {
-      req.session.loggedin = true
       req.session.data = result
+      req.session.ID = result.ID
       res.redirect("/home")
     } else {
       console.log("wrong password")
@@ -74,8 +74,10 @@ app.post("/createAccount", (req, res) => {
 
 app.get("/home", (req, res) => {
   console.log(req.session)
-  if (req.session.loggedin) {
-    res.render("home")
+  if (req.session.ID) {
+    pool.query(`SELECT * FROM users WHERE gender = (SELECT preference FROM users WHERE ID = ?) AND preference = (SELECT gender FROM users WHERE id = ?)`, [req.session.ID, req.session.ID], (err, result) => {
+      res.render("home", {data: result})
+    })
   } else {
     res.redirect("/")
   }

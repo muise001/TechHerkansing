@@ -317,3 +317,30 @@ footer button {
   width: 10rem;
   margin: 0 calc(50% - 5rem);
 }
+
+.homeHeader {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 3rem;
+  background: coral;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 calc(10vw - 1rem);
+}
+
+.homeHeader img {
+  height: 3rem;
+  width: 3rem;
+}
+
+.homeHeader nav {
+  align-self: center;
+}
+
+.homeHeader a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin: 0 1rem;
+  color: white;
+}
