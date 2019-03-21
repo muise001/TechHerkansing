@@ -26,14 +26,15 @@
         <label for="birthday">Birthday</label>
         <input name="birthDay" type="date" class="noStyle" id="birthday" placeholder="01-01-2000" required/>
         <div class="divider"></div>
+        <label class="center">My gender</label>
         <div class="buttons">
           <div class="gender">
             <label for="male">male</label>
-            <input id="male" type="radio" name="gender" value="true" required>
+            <input id="male" type="radio" name="gender" value="male" required>
           </div>
           <div class="gender">
             <label for="female">female</label>
-            <input id="female" type="radio" name="gender" value="false">
+            <input id="female" type="radio" name="gender" value="female">
           </div>
         </div>
         <div class="divider"></div>
@@ -47,7 +48,18 @@
         <input id="kids" type="number">
         <label for="profilePicture">Profile picture</label>
         <input id="profilePicture" type="file" name="profilePicture">
-        <label for="bio">Tell us about you</label>
+        <label class="center">My Preference</label>
+        <div class="buttons">
+          <div class="gender">
+            <label for="pref-man">male</label>
+            <input id="pref-man" type="radio" name="preference" value="male" required>
+          </div>
+          <div class="gender">
+            <label for="pref-female">female</label>
+            <input id="pref-female" type="radio" name="preference" value="female">
+          </div>
+        </div>
+        <label for="bio">Tell us about yourself</label>
         <textarea name="bio" rows="8" cols="80" accept="image/*"></textarea>
         <div class="divider"></div>
         <div class="buttons">

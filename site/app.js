@@ -54,10 +54,10 @@ app.post("/login", (req, res, next) => {
 })
 
 app.post("/createAccount", (req, res) => {
-  const { username, email, password, password2, name, last_name, birthDay, gender, bio, profilePicture } = req.body
+  const { username, email, password, password2, name, last_name, birthDay, gender, bio, profilePicture, preference } = req.body
   if (password === password2) {
     pool.query("INSERT INTO users SET ?", {
-      username, email, password: md5(salt+password+salt), name, last_name, birthDay, gender, bio, profilePicture
+      username, email, password: md5(salt+password+salt), name, last_name, birthDay, gender, bio, profilePicture, preference
     })
     res.render("/home")
   } else {
