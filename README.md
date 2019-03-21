@@ -14,3 +14,17 @@ Voor de achtergrond heeft een lichtblauwe kleur. Deze kleur heb ik gekozen omdat
 De wolken heb ik speels en niet te serieus gemaakt. Daten moet namelijk een ontspannen bezigheid zijn. Door de website speels en leuk te houden, houdt ik de goede doelgroep binnen. Deze doelgroep bestaat uit jonge mensen (20+ en 40-). Dit thema past ze precies.
 #### Het Lettertype
 Het lettertype ([Amatic SC](https://fonts.googleapis.com/css?family=Amatic+SC)) is wederom gekozen omdat hij speels overkomt en de doelgroep goed past. 
+
+## De Code
+In mijn app gebruik ik : 
+```javascript
+const express = require('express')              // Maakt het renderen en routen makkelijker
+const ejs = require('ejs')                      // Templating tool
+const bodyParser = require('body-parser')       // Makkelijk forms parsen
+const mysql = require("promise-mysql")          // Zodat we met queries kunnen ophalen als promises
+const ENV = require("dotenv").config().parsed   // Geheime server-info die alleen op mijn computer staat
+const md5 = require("md5")                      // Wachtwoord encryptie
+const session = require("express-session")      // Zodat bepaalde pagina's alleen bekeken kunnen worden na login
+```
+
+## De Database
