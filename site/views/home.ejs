@@ -1,6 +1,8 @@
 <% include ./partials/header %>
 <% include ./partials/homeHeader %>
 
+
+<% if(data.length > 0) {%>
 <% data.forEach(profile => { %>
   <% const {username, last_name, gender, birthDay, bio, kids} = profile%>
   <% let today = new Date(); %>
@@ -33,5 +35,12 @@
     </footer>
   </section>
 <% }) %>
+<% } else { %>
+<section class="profile">
+  <header>
+    <h1>No Matches Found... sorry bro</h1>
+  </header>
+</section>
+<% } %>
 
 <% include ./partials/footer %>
