@@ -6,9 +6,10 @@ const app = express()
 const fetch = require("node-fetch")
 const mysql = require("promise-mysql")
 const ENV = require("dotenv").config().parsed
+const myConnection = require('express-myconnection');
 const salt = "0923ur902hfwnWEhfewo89282@@@u9ef"
 const md5 = require("md5")
-// const session = require("express-session")
+const session = require("express-session")
 
 const pool = mysql.createPool({
   host: ENV.DB_HOST,
@@ -29,8 +30,6 @@ app.use(session({
 }))
 
 app.get("/", (req, res) => {
-  pool.query("SELECT * FROM test")
-    .then(res => console.log(res))
   res.render("index")
 })
 
@@ -38,9 +37,20 @@ app.get("/createAccount", (req, res) => {
   res.render("createAccount")
 })
 
-app.post("/login", (req, res) => {
+app.post("/login", (req, res, next) => {
   const { password, email } = req.body
-  console.log(md5(salt+req.body.password+salt))
+  pool.query("SELECT * FROM users WHERE email = ?", email, (err, result) => {
+    if (err) return next(err)
+    result = result[0]
+    if (md5(salt + password + salt) === result.password) {
+      console.log("welcome back")
+      res.render("home")
+    } else {
+      console.log("wrong password")
+      res.render("index")
+      return
+    }
+  })
 })
 
 app.post("/createAccount", (req, res) => {
@@ -55,14 +65,6 @@ app.post("/createAccount", (req, res) => {
     console.log("passwords don't match")
     return
   }
-})
-
-app.post("/createUser", (req, res) => {
-  console.log(req.body.email);
-  pool.query("INSERT INTO test SET ?", {
-    name: req.body.email
-  }).then(res => console.log(res))
-  res.render("index")
 })
 
 let server = app.listen(PORT, () => {
