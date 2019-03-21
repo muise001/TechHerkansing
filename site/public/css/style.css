@@ -237,3 +237,81 @@ footer img {
   height: 10vh;
   width: 10vh;
 }
+
+.profile {
+  width: 80vw;
+  margin: 3rem auto;
+  background: white;
+  padding: 0 10%;
+  border-radius: 0.5rem;
+  max-width: 640px;
+  box-shadow: 0px 28px 106px 0px rgba(255,255,255,0.75);
+}
+
+.profile header{
+  position: relative;
+  width: 80%;
+  height: 5.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.profile header img {
+  position: absolute;
+  height: 6rem;
+  width: 6rem;
+  top: -2.5rem;
+  border-radius: 50%;
+  border: 7px solid var(--blue);
+  right: -4rem;
+}
+
+.profile .info p{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin-bottom: 0.5rem;
+}
+
+.profile article {
+  padding: 0 0 2rem;
+}
+
+.profile article section{
+  display: flex;
+  justify-content: space-between
+}
+
+.profile article p{
+  width: 50%;
+}
+
+.profile article img {
+  width: 40%;
+  height: 100%;
+}
+
+.profile article h2 {
+  margin: 1rem 0;
+}
+
+.profile button {
+  width: 100%;
+  border-color: var(--blue);
+  color: white;
+  background-color: var(--blue)
+}
+
+footer {
+  position: relative;
+  height: 1rem;
+}
+
+footer button {
+  background-color: #e87dfb;
+  border-color: #e87dfb;
+  bottom: -1rem;
+  position: absolute;
+  width: 10rem;
+  margin: 0 calc(50% - 5rem);
+}
