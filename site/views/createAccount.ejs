@@ -1,51 +1,62 @@
 <% include ./partials/header %>
 
 <section class="mainForm">
-<form action="">
-  <h2>New Account</h2>
-  <section className="multiplePageForm">
-    <div class="multiplePageForm">
-      <label for="username">Username</label>
-      <input id="username" type="text" placeholder="johnDoe123">
-      <label for="email">E-mail</label>
-      <input id="email" type="text" placeholder="John@Doe.com">
-      <label for="password">Password</label>
-      <input id="password" type="password">
-      <label for="confirmPassword">Confirm Password</label>
-      <input id="confirmPassword" type="password">
-      <div class="divider"></div>
-      <a href="#">Next</a>
-    </div>
-    <div class="multiplePageForm">
-      <label for="username">Username</label>
-      <input id="username" type="text" placeholder="johnDoe123">
-      <label for="email">E-mail</label>
-      <input id="email" type="text" placeholder="John@Doe.com">
-      <label for="password">Password</label>
-      <input id="password" type="password">
-      <label for="confirmPassword">Confirm Password</label>
-      <input id="confirmPassword" type="password">
-      <div class="divider"></div>
-      <a href="#">Next</a>
-    </div>
-    <div class="multiplePageForm">
-      <label for="username">Username</label>
-      <input id="username" type="text" placeholder="johnDoe123">
-      <label for="email">E-mail</label>
-      <input id="email" type="text" placeholder="John@Doe.com">
-      <label for="password">Password</label>
-      <input id="password" type="password">
-      <label for="confirmPassword">Confirm Password</label>
-      <input id="confirmPassword" type="password">
-      <div class="divider"></div>
-      <input type="submit" value="Naar profiel">
-    </div>
-  </section>
-</form>
-
-<div class="divider blue"><p>Of</p></div>
-
-<button>Maak een account!</button>
+  <form action="/createAccount" method="post">
+    <h2>New Account</h2>
+    <section class="multiplePageForm">
+      <div>
+        <label for="username">Username</label>
+        <input name="username" id="username" type="text" placeholder="johnDoe123" required>
+        <label for="email">E-mail</label>
+        <input name="email" id="email" type="email" placeholder="John@Doe.com" required>
+        <label for="password">Password</label>
+        <input name="password" id="password" type="password" required>
+        <label for="confirmPassword">Confirm Password</label>
+        <input name="password2" id="confirmPassword" type="password" required>
+        <div class="divider"></div>
+        <div class="buttons">
+          <a class="blue next" href="#">Next</a>
+        </div>
+      </div>
+      <div>
+        <label for="name">First Name</label>
+        <input type="text" id="name" name="name" required/>
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="last_name" required/>
+        <label for="birthday">Birthday</label>
+        <input name="birthDay" type="date" class="noStyle" id="birthday" placeholder="01-01-2000" required/>
+        <div class="divider"></div>
+        <div class="buttons">
+          <div class="gender">
+            <label for="male">male</label>
+            <input id="male" type="radio" name="gender" value="true" required>
+          </div>
+          <div class="gender">
+            <label for="female">female</label>
+            <input id="female" type="radio" name="gender" value="false">
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="buttons twoButtons">
+          <a class="blue previous twoButtons" href="#">Back</a>
+          <a class="blue next twoButtons" href="#">Next</a>
+        </div>
+      </div>
+      <div>
+        <label for="kids">Number of children</label>
+        <input id="kids" type="number">
+        <label for="profilePicture">Profile picture</label>
+        <input id="profilePicture" type="file" name="profilePicture">
+        <label for="bio">Tell us about you</label>
+        <textarea name="bio" rows="8" cols="80" accept="image/*"></textarea>
+        <div class="divider"></div>
+        <div class="buttons">
+          <a class="blue previous twoButtons" href="#">Back</a>
+          <input class="twoButtons" type="submit" name="" value="Date!">
+        </div>
+      </div>
+    </section>
+  </form>
 </section>
 
 <% include ./partials/footer %>
