@@ -32,7 +32,19 @@ Ik gebruik mijn eigen data-base die live staat. Hierdoor hoef ik geen Mamp of my
 
 <img src="https://github.com/muise001/TechHerkansing/blob/master/readme%20img/database.png" alt="db">
 
-Deze structuur is nu natuurlijk nog vrij basic. 
+Deze structuur is nu natuurlijk nog vrij basic. Wat ik wil doen is sub-database-categorien aanmaken. Daarij zit ik te denken aan drie toevoegingen. Ze staan in volgoorde van prioriteit
+  1. Extra DB Info
+      - Favoriete eten
+      - Hobbies
+      - Vragenlijst antwoorden
+      - Baan
+  2. Fotos DB
+      - Profielfoto
+      - Prive-foto's
+  3. Game DB
+      - Highscore (van eventuele game. Zie plannen hieronder)
+
+<img src="https://github.com/muise001/TechHerkansing/blob/master/readme%20img/db_plan.jpg" alt="db_plan">
 
 ## Uitbreidingsplannen
 Love Seekers heeft veel potetentie om groter te worden. Tot nu toe heeft de website namelijk alleen nog
