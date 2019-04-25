@@ -324,7 +324,7 @@ footer {
 }
 
 .indexFooter {
-  background: linear-gradient(rgba(255,255,255,0.0) -13%, rgba(255,255,255,0.8));
+  background: linear-gradient(rgba(255,255,255,0.0) -1%, rgba(255,255,255,0.8));
   height: fit-content;
   position: fixed;
   width: 100%;
@@ -368,4 +368,8 @@ footer button {
   text-decoration: none;
   margin: 0 1rem;
   color: white;
+}
+
+.none {
+  display: none;
 }
