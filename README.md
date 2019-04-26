@@ -1,6 +1,6 @@
 # Love Seekers
 
-Love Seekers is een volledige dating website waar je matches kan maken en games kan spelen tegen je matches!
+[Love Seekers](https://bt-hqeonpkthe.now.sh/) is een volledige dating website waar je matches kan maken en games kan spelen tegen je matches!
 
 ## Het Design
 Voor het design van deze website heb ik gekozen voor een "wolken / stak-blauwe-lucht" thema. Dit heb ik gekozen met het  spreekwoord "in de wolken" in mijn achterhoofd. Dit spreekwoord is precies het gevoel wat ik wil bereiken met deze website.
